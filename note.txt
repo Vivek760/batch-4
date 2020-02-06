@@ -1,0 +1,5 @@
+document object model- assemlbling the whole html,css,js file in execution
+two sides of java
+  -browser - js    - visible to user       -will run on browser
+  -server  - nodejs  - not visible to user -will run on cloud
+  -Reactjs - has functions defined in js language - create ui easily  - lets use html inside js functions
