@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-class wow {
-  render(){
-    return <h1>wow</h1>
+class App extends Component {
+  render() {
+    return <h1>Hello, World</h1>;
   }
 }
 
-render(<wow /> , document.getElementById('root'));
+render(<App />, document.getElementById('root'));
