@@ -7,11 +7,30 @@ class App extends React.Component {
     count : 0,
   };
   increment = () => {
-    const cur = this.state.count;
-    this.setState({
-      // eslint-disable-next-line no-magic-numbers
-      count: cur + 1,
-    });
+
+    //let timeout = 1000;
+    let cur = 0;
+    while(++cur != 10){
+
+    setTimeout(() => {
+      this.setState({
+
+        count: cur,
+
+      });
+
+    }, 1000*cur);
+    console.log(cur);
+    console.log(this.state.count);
+    // setTimeout(() => {}, 1000);
+    }
+    //cur = 0
+    // let i = 1;
+    // setInterval(() => {
+    //   this.setState({
+    //     count: i++,
+    //   });
+    // }, 1000);
   }
   decrement = () => {
     const cur = this.state.count;
