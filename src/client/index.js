@@ -7,46 +7,36 @@ class App extends React.Component {
     count : 0,
   };
   increment = () => {
-
-    //let timeout = 1000;
-    let cur = 0;
-    while(++cur != 10){
-
-    setTimeout(() => {
-      this.setState({
-
-        count: cur,
-
-      });
-
-    }, 1000*cur);
-    console.log(cur);
-    console.log(this.state.count);
-    // setTimeout(() => {}, 1000);
+    let cur = this.state.count;
+    if ( cur == 0) {
+      cur = 1;
     }
-    //cur = 0
-    // let i = 1;
-    // setInterval(() => {
-    //   this.setState({
-    //     count: i++,
-    //   });
-    // }, 1000);
+    this.setState({
+
+      count : cur*2,
+    });
   }
   decrement = () => {
-    const cur = this.state.count;
+    let cur = this.state.count;
+    if ( cur == 0) {
+      cur = 1;
+    }
     this.setState({
-      // eslint-disable-next-line no-magic-numbers
-      count: cur - 1,
+
+      count : cur/2,
     });
   }
   render(){
     return <div>
+      <center><h1>Test</h1>
       <h1>{this.state.count}</h1>
-      <button onClick={this.increment}>+</button>
-      <button onClick={this.decrement}>-</button>
-
-    </div>
+      <button onClick={this.increment}>Multiply By 2</button>
+      <button onClick={this.decrement}>Divide By 2</button>
+      </center>
+ </div>
   }
 
 }
-render(<App />, document.getElementById('root'));
+//render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root2'));
+if(module.hot) module.hot.accept();
